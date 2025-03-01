@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customized Playlists | Your Musical Journey</title>
+    <style>
+        :root {
+            --primary: #8e44ad;
+            --primary-light: #a569bd;
+            --primary-dark: #703688;
+            --secondary: #ff6b81;
+            --secondary-light: #ff8c9e;
+            --secondary-dark: #e84c6a;
+            --text: #333;
+            --text-light: #666;
+            --bg-light: #f9f9f9;
+            --white: #fff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--bg-light);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 1.5rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: url('https://via.placeholder.com/800x800.png?text=Music+Notes') repeat;
+            opacity: 0.05;
+            transform: rotate(30deg);
+            pointer-events: none;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+        }
+        
+        .logo i {
+            color: var(--secondary);
+            margin-right: 12px;
+            font-size: 2rem;
+        }
+        
+        .header-cta {
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 10px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .header-cta:hover {
+            background-color: var(--secondary-light);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(142, 68, 173, 0.8), rgba(112, 54, 136, 0.9)), url('https://via.placeholder.com/1920x1080.png?text=Musical+Experience') no-repeat center center/cover;
+            padding: 120px 0;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-badge {
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 14px 36px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            border: 2px solid transparent;
+        }
+        
+        .cta-button:hover {
+            background-color: var(--secondary-light);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .cta-button-outline {
+            background-color: transparent;
+            border: 2px solid var(--white);
+            color: var(--white);
+            margin-left: 15px;
+        }
+        
+        .cta-button-outline:hover {
+            background-color: var(--white);
+            color: var(--primary);
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 100px 0;
+            background-color: var(--white);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-subtitle {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .feature-card {
+            text-align: center;
+            padding: 40px 30px;
+            border-radius: 10px;
+            background-color: var(--bg-light);
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-bottom: 3px solid var(--secondary);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .feature-title {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+        
+        .feature-description {
+            color: var(--text-light);
+        }
+        
+        /* Playlists Section */
+        .playlists {
+            padding: 100px 0;
+            background-color: var(--bg-light);
+        }
+        
+        .playlists-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .playlist-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .playlist-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .playlist-image {
+            width: 100%;
+            height: 200px;
+            background-color: #ddd;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .playlist-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+        
+        .playlist-card:hover .playlist-image img {
+            transform: scale(1.1);
+        }
+        
+        .playlist-content {
+            padding: 25px;
+        }
+        
+        .playlist-title {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .playlist-description {
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+        
+        .playlist-stats {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        .playlist-stats div {
+            display: flex;
+            align-items: center;
+        }
+        
+        .playlist-stats i {
+            margin-right: 5px;
+            color: var(--primary);
+        }
+        
+        /* Call to Action Section */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://via.placeholder.com/800x800.png?text=Music+Notes') repeat;
+            opacity: 0.05;
+            pointer-events: none;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-title {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-text {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: var(--white);
+            padding: 80px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-column h3 {
+            color: var(--secondary);
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: var(--secondary);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-column p {
+            color: #aaa;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+        
+        .footer-links i {
+            font-size: 0.9rem;
+            margin-right: 10px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background-color: var(--secondary);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .header-cta {
+                margin-top: 20px;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .cta-button-outline {
+                margin-left: 0;
+                margin-top: 15px;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="https://ica.compare.com/compare-lp-3/" class="logo">
+                    <i class="fas fa-music"></i>
+                    CustomizedPlaylists
+                </a>
+                <a href="https://ica.compare.com/compare-lp-3/" class="header-cta">Get Started</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">Premium Experience</div>
+                <h1 class="hero-title">Discover Your Perfect Musical Journey</h1>
+                <p class="hero-subtitle">Personalized playlists crafted to match your unique taste and lifestyle. No more endless searching - just music you'll love.</p>
+                <div class="hero-buttons">
+                    <a href="https://ica.compare.com/compare-lp-3/" class="cta-button">Create My Playlist</a>
+                    <a href="https://ica.compare.com/compare-lp-3/" class="cta-button cta-button-outline">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose Us</h2>
+                <p class="section-subtitle">Discover what makes our customized playlists stand out from the rest</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="feature-title">AI-Powered Curation</h3>
+                    <p class="feature-description">Our advanced algorithm analyzes your preferences and listening habits to create playlists perfectly tailored to your taste.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="feature-title">Instant Creation</h3>
+                    <p class="feature-description">Get your personalized playlist in just minutes. Fill out a simple questionnaire and we'll do the rest.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-sliders-h"></i>
+                    </div>
+                    <h3 class="feature-title">Complete Customization</h3>
+                    <p class="feature-description">Fine-tune your playlists with advanced preferences including tempo, mood, era, and more.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="playlists">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Popular Playlists</h2>
+                <p class="section-subtitle">Browse through some of our most loved curated collections</p>
+            </div>
+            
+            <div class="playlists-grid">
+                <div class="playlist-card">
+                    <div class="playlist-image">
+                        <img src="https://via.placeholder.com/400x300.png?text=Workout+Playlist" alt="Workout Playlist">
+                    </div>
+                    <div class="playlist-content">
+                        <h3 class="playlist-title">Ultimate Workout Mix</h3>
+                        <p class="playlist-description">High-energy tracks designed to fuel your most intense workout sessions.</p>
+                        <div class="playlist-stats">
+                            <div><i class="fas fa-music"></i> 35 songs</div>
+                            <div><i class="fas fa-clock"></i> 2.5 hours</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="playlist-card">
+                    <div class="playlist-image">
+                        <img src="https://via.placeholder.com/400x300.png?text=Chill+Vibes" alt="Chill Vibes">
+                    </div>
+                    <div class="playlist-content">
+                        <h3 class="playlist-title">Chill Vibes</h3>
+                        <p class="playlist-description">Mellow tracks perfect for relaxation, studying, or winding down after a long day.</p>
+                        <div class="playlist-stats">
+                            <div><i class="fas fa-music"></i> 42 songs</div>
+                            <div><i class="fas fa-clock"></i> 3 hours</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="playlist-card">
+                    <div class="playlist-image">
+                        <img src="https://via.placeholder.com/400x300.png?text=Focus+Flow" alt="Focus Flow">
+                    </div>
+                    <div class="playlist-content">
+                        <h3 class="playlist-title">Focus Flow</h3>
+                        <p class="playlist-description">Concentration-enhancing tracks designed to boost productivity and focus.</p>
+                        <div class="playlist-stats">
+                            <div><i class="fas fa-music"></i> 50 songs</div>
+                            <div><i class="fas fa-clock"></i> 4 hours</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready for Your Perfect Playlist?</h2>
+                <p class="cta-text">Join thousands of music lovers who have transformed their listening experience with our customized playlists. Create yours in just minutes with no obligation.</p>
+                <a href="https://ica.compare.com/compare-lp-3/" class="cta-button">Get Started Now</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>About Us</h3>
+                    <p>CustomizedPlaylists is dedicated to transforming how you experience music. Our platform combines advanced technology with human curation to deliver the perfect soundtrack for every moment of your life.</p>
+                    <div class="social-links">
+                        <a href="https://ica.compare.com/compare-lp-3/" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://ica.compare.com/compare-lp-3/" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="https://ica.compare.com/compare-lp-3/" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="https://ica.compare.com/compare-lp-3/" class="social-link"><i class="fab fa-spotify"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://ica.compare.com/compare-lp-3/"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="https://ica.compare.com/compare-lp-3/"><i class="fas fa-chevron-right"></i> Features</a></li>
+                        <li><a href="https://ica.compare.com/compare-lp-3/"><i class="fas fa-chevron-right"></i> Browse Playlists</a></li>
+                        <li><a href="https://ica.compare.com/compare-lp-3/"><i class="fas fa-chevron-right"></i> Pricing</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://ica.compare.com/compare-lp-3/"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                        <li><a href="https://ica.compare.com/compare-lp-3/"><i class="fas fa-chevron-right"></i> Tutorials</a></li>
+                        <li><a href="https://ica.compare.com/compare-lp-3/"><i class="fas fa-chevron-right"></i> Support Center</a></li>
+                        <li><a href="https://ica.compare.com/compare-lp-3/"><i class="fas fa-chevron-right"></i> FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="/shared_resources/privacy_policy.html"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+                        <li><a href="/shared_resources/terms_of_use.html"><i class="fas fa-chevron-right"></i> Terms of Use</a></li>
+                        <li><a href="https://ica.compare.com/compare-lp-3/"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2024 CustomizedPlaylists. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Ensure all links point to the specified URL except privacy policy and terms
+        document.addEventListener('DOMContentLoaded', function() {
+            document.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    // Allow privacy policy and terms of use to navigate normally
+                    if (e.target.href.includes('privacy_policy.html') || e.target.href.includes('terms_of_use.html')) {
+                        return;
+                    }
+                    
+                    // All other links redirect to the conversion URL
+                    e.preventDefault();
+                    window.location.href = 'https://ica.compare.com/compare-lp-3/';
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

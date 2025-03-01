@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life's Daily Deals | $39 Per Month Insurance</title>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fafafa;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background: #4a90e2;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+        .logo span {
+            color: #ffde59;
+        }
+        .tagline {
+            font-size: 1rem;
+            font-style: italic;
+        }
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1200x600.png?text=Insurance+Deals');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .hero-title {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .hero-subtitle {
+            font-size: 1.6rem;
+            margin-bottom: 30px;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #ff6b3d;
+            color: white;
+            padding: 18px 35px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 107, 61, 0.4);
+        }
+        .cta-button:hover {
+            background-color: #ff5a2c;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 107, 61, 0.6);
+        }
+        .main-content {
+            padding: 60px 0;
+        }
+        .section-title {
+            font-size: 2.2rem;
+            color: #4a90e2;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .deal-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+        .deal-image {
+            width: 100%;
+            height: auto;
+            max-height: 300px;
+            object-fit: cover;
+        }
+        .deal-content {
+            padding: 30px;
+        }
+        .deal-title {
+            font-size: 1.8rem;
+            color: #333;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        .deal-price {
+            font-size: 2.5rem;
+            color: #ff6b3d;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .deal-description {
+            color: #666;
+            margin-bottom: 25px;
+        }
+        .testimonials {
+            background-color: #f0f7ff;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .testimonial-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .testimonial {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            flex-basis: calc(33.333% - 30px);
+            min-width: 280px;
+        }
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        .testimonial-author {
+            font-weight: bold;
+            color: #4a90e2;
+        }
+        .how-it-works {
+            padding: 60px 0;
+            text-align: center;
+        }
+        .steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+        .step {
+            flex-basis: calc(33.333% - 30px);
+            min-width: 250px;
+            margin-bottom: 30px;
+        }
+        .step-number {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            background-color: #4a90e2;
+            color: white;
+            font-size: 1.8rem;
+            font-weight: bold;
+            line-height: 60px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+        .step-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        .faq {
+            background-color: #f9f9f9;
+            padding: 60px 0;
+        }
+        .faq-item {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+        .faq-question {
+            font-size: 1.3rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #4a90e2;
+        }
+        .faq-answer {
+            color: #666;
+        }
+        .closing-cta {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(to right, #4a90e2, #63b3ed);
+            color: white;
+        }
+        .closing-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .closing-text {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 50px 0 30px;
+            text-align: center;
+        }
+        .footer-links {
+            margin-bottom: 30px;
+        }
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 0.9rem;
+        }
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        .copyright {
+            font-size: 0.8rem;
+            color: #aaa;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+            .testimonial, .step {
+                flex-basis: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Life's <span>Daily</span> Deals</div>
+            <div class="tagline">Discover Exclusive Savings Every Day</div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Auto Insurance Starting at Just $39 Per Month</h1>
+                <p class="hero-subtitle">Limited-Time Offer: Compare Multiple Providers & Lock In Your Rate Today</p>
+                <a href="https://ica.compare.com/compare-lp-3/" class="cta-button">CHECK MY RATE NOW</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="main-content">
+        <div class="container">
+            <h2 class="section-title">Exclusive Insurance Deals</h2>
+            
+            <div class="deal-card">
+                <img src="https://via.placeholder.com/1000x400.png?text=Auto+Insurance+Deal" alt="Auto Insurance Special Offer" class="deal-image">
+                <div class="deal-content">
+                    <h3 class="deal-title">Full Coverage Auto Insurance</h3>
+                    <div class="deal-price">From $39/month</div>
+                    <p class="deal-description">Our special partnership with leading insurance providers allows us to offer comprehensive auto coverage at rates far below the national average. This limited-time offer includes collision, comprehensive, and liability protection with flexible payment options.</p>
+                    <a href="https://ica.compare.com/compare-lp-3/" class="cta-button">GET THIS DEAL</a>
+                </div>
+            </div>
+            
+            <div class="deal-card">
+                <img src="https://via.placeholder.com/1000x400.png?text=Special+Discount+Package" alt="Insurance Bundle Package" class="deal-image">
+                <div class="deal-content">
+                    <h3 class="deal-title">Multi-Policy Bundle Discount</h3>
+                    <div class="deal-price">Save up to 30%</div>
+                    <p class="deal-description">Combine your auto insurance with homeowners or renters insurance to unlock massive savings. Our exclusive bundle packages are designed to provide maximum protection at minimum cost, with personalized coverage options tailored to your specific needs.</p>
+                    <a href="https://ica.compare.com/compare-lp-3/" class="cta-button">BUNDLE & SAVE</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            
+            <div class="testimonial-list">
+                <div class="testimonial">
+                    <p class="testimonial-text">"I couldn't believe it when I saw my quote. I'm saving over $800 a year compared to my previous provider, and I have better coverage!"</p>
+                    <p class="testimonial-author">- Michael S., Chicago</p>
+                </div>
+                
+                <div class="testimonial">
+                    <p class="testimonial-text">"The process was incredibly easy. 5 minutes to compare quotes, and I found a plan for just $39 per month. My previous insurance was nearly double that amount."</p>
+                    <p class="testimonial-author">- Jennifer T., Atlanta</p>
+                </div>
+                
+                <div class="testimonial">
+                    <p class="testimonial-text">"As a new driver, I was expecting to pay a fortune for insurance. Thanks to Life's Daily Deals, I found an affordable policy that fits my budget perfectly."</p>
+                    <p class="testimonial-author">- Kevin R., Phoenix</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Enter Your Information</h3>
+                    <p>Provide basic details about yourself and your vehicle to receive personalized quotes.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Compare Offers</h3>
+                    <p>Review side-by-side comparisons from multiple top-rated insurance providers.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Save & Activate</h3>
+                    <p>Select the best offer and activate your new policy in minutes with instant coverage.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <h3 class="faq-question">Is $39 per month available for everyone?</h3>
+                <p class="faq-answer">Rates start at $39 per month for qualified drivers. Your exact rate will depend on factors like your driving history, vehicle type, location, and coverage options. Many of our customers do qualify for our lowest advertised rates.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3 class="faq-question">What does the quote process involve?</h3>
+                <p class="faq-answer">Our quote process is simple and takes just minutes to complete. You'll need to provide basic information about yourself, your vehicle, and your driving history. We don't require a phone number or social security number to view initial quotes.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3 class="faq-question">Can I keep my current coverage levels?</h3>
+                <p class="faq-answer">Absolutely! You can customize your coverage levels to match or exceed your current policy. Our partners offer everything from minimum state requirements to premium full coverage options.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3 class="faq-question">How quickly can I get insured?</h3>
+                <p class="faq-answer">Most policies can be activated instantly after completing the purchase process online. You'll receive digital proof of insurance that you can use immediately while your physical documents are being prepared.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="closing-cta">
+        <div class="container">
+            <h2 class="closing-title">Don't Miss This Limited-Time Offer</h2>
+            <p class="closing-text">These special rates won't last forever. Take advantage of our exclusive $39/month starting rate while it's still available. There's no obligation to purchase, and checking rates doesn't affect your credit score.</p>
+            <a href="https://ica.compare.com/compare-lp-3/" class="cta-button">GET MY $39/MONTH QUOTE</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="https://ica.compare.com/compare-lp-3/">About Us</a>
+                <a href="https://ica.compare.com/compare-lp-3/">Privacy Policy</a>
+                <a href="https://ica.compare.com/compare-lp-3/">Terms of Service</a>
+                <a href="https://ica.compare.com/compare-lp-3/">Contact Us</a>
+                <a href="https://ica.compare.com/compare-lp-3/">FAQ</a>
+            </div>
+            <p class="copyright">© 2024 Life's Daily Deals. All rights reserved. This is an advertisement and not a blog. Life's Daily Deals is not an insurance company, agency or broker. We connect consumers with insurance partners who may contact them with information about insurance products.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Ensure all links redirect to the specified URL
+        document.addEventListener('DOMContentLoaded', function() {
+            document.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    e.preventDefault();
+                    window.location.href = 'https://ica.compare.com/compare-lp-3/';
+                }
+            });
+        });
+    </script>
+</body>
+</html>     <script>
+        // Make all links and buttons redirect to the target URL
+        document.addEventListener('DOMContentLoaded', function() {
+            // Find all links
+            var links = document.getElementsByTagName('a');
+            for (var i = 0; i < links.length; i++) {
+                links[i].addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.location.href = 'https://ica.compare.com/compare-lp-3/';
+                });
+            }
+            
+            // Find all buttons
+            var buttons = document.getElementsByTagName('button');
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.location.href = 'https://ica.compare.com/compare-lp-3/';
+                });
+            }
+            
+            // Find elements with onclick attributes
+            var elements = document.querySelectorAll('[onclick]');
+            for (var i = 0; i < elements.length; i++) {
+                elements[i].setAttribute('onclick', "window.location.href='https://ica.compare.com/compare-lp-3/';");
+            }
+            
+            // Add click handler to the whole document to catch other clickable elements
+            document.addEventListener('click', function(e) {
+                // Check if the clicked element or its parent is a button, input[type=submit], or has a role=button
+                var el = e.target;
+                while (el && el !== document.body) {
+                    if (
+                        el.tagName === 'BUTTON' || 
+                        (el.tagName === 'INPUT' && el.type === 'submit') ||
+                        el.getAttribute('role') === 'button' ||
+                        el.classList.contains('btn') ||
+                        el.classList.contains('button') ||
+                        el.classList.contains('cta')
+                    ) {
+                        e.preventDefault();
+                        window.location.href = 'https://ica.compare.com/compare-lp-3/';
+                        return;
+                    }
+                    el = el.parentElement;
+                }
+            });
+        });
+    </script>
+</body>

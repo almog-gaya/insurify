@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PremiumSaver | Quality Insurance at Affordable Rates</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fcfcfc;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: #5e35b1;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            color: #fff;
+            font-size: 2rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        
+        .logo span {
+            color: #4fc3f7;
+        }
+        
+        .header-cta {
+            background-color: #4fc3f7;
+            color: #5e35b1;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            font-family: 'Arial', sans-serif;
+            transition: all 0.3s ease;
+        }
+        
+        .header-cta:hover {
+            background-color: #29b6f6;
+        }
+        
+        /* Main Content */
+        .hero {
+            background: url('https://via.placeholder.com/1600x800.png?text=Premium+Insurance+Protection') no-repeat center center/cover;
+            height: 500px;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(94, 53, 177, 0.7);
+        }
+        
+        .hero-content {
+            position: relative;
+            color: #fff;
+            padding: 0 20px;
+            max-width: 800px;
+            z-index: 1;
+        }
+        
+        .hero-title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero-text {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: #4fc3f7;
+            color: #5e35b1;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            font-family: 'Arial', sans-serif;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background-color: #29b6f6;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .announcement {
+            background-color: #f3e5f5;
+            padding: 30px;
+            margin: 40px 0;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .announcement-title {
+            color: #5e35b1;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .announcement-text {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        .content-section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            font-size: 2.2rem;
+            color: #5e35b1;
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background-color: #4fc3f7;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .benefit {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .benefit:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-bottom: 3px solid #4fc3f7;
+        }
+        
+        .benefit-icon {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(94, 53, 177, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+        }
+        
+        .benefit-title {
+            font-size: 1.4rem;
+            color: #5e35b1;
+            margin-bottom: 15px;
+        }
+        
+        .testimonials {
+            background-color: #f8f8f8;
+            padding: 60px 0;
+            margin: 60px 0;
+        }
+        
+        .testimonial {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .testimonial::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 5rem;
+            color: rgba(94, 53, 177, 0.1);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            padding-left: 40px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: #5e35b1;
+            text-align: right;
+        }
+        
+        .cta-section {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(135deg, #5e35b1 0%, #7e57c2 100%);
+            color: #fff;
+            margin: 60px 0 0;
+        }
+        
+        .cta-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-text {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #5e35b1;
+            color: #fff;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: #4fc3f7;
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-column p {
+            color: #ccc;
+            margin-bottom: 15px;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #4fc3f7;
+            padding-left: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .header-cta {
+                margin-top: 20px;
+            }
+            
+            .hero-title {
+                font-size: 2.3rem;
+            }
+            
+            .benefit {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Premium<span>Saver</span></div>
+                <a href="https://ica.compare.com/compare-lp-3/" class="header-cta">Get a Free Quote</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Premium Protection at Surprisingly Affordable Rates</h1>
+                <p class="hero-text">For over three decades, we've helped thousands of Americans secure quality coverage while saving hundreds on their insurance premiums. Discover if you qualify for our exclusive savings program.</p>
+                <a href="https://ica.compare.com/compare-lp-3/" class="cta-button">Check Your Rate Today</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="announcement">
+            <h2 class="announcement-title">Limited Time Offer: Special Rates Available</h2>
+            <p class="announcement-text">Due to recent policy changes, we're now able to offer qualified drivers significantly reduced premium rates. Most people don't realize they qualify for these special savings.</p>
+            <a href="https://ica.compare.com/compare-lp-3/" class="cta-button">See If You Qualify</a>
+        </div>
+
+        <section class="content-section">
+            <h2 class="section-title">Why Choose PremiumSaver?</h2>
+            
+            <div class="benefits">
+                <div class="benefit">
+                    <div class="benefit-icon">🛡️</div>
+                    <h3 class="benefit-title">Comprehensive Coverage</h3>
+                    <p>Our policies provide robust protection against a wide range of risks, giving you peace of mind on and off the road.</p>
+                </div>
+                
+                <div class="benefit">
+                    <div class="benefit-icon">💰</div>
+                    <h3 class="benefit-title">Competitive Rates</h3>
+                    <p>We work with multiple top-rated carriers to ensure you receive the best possible rate for your specific situation.</p>
+                </div>
+                
+                <div class="benefit">
+                    <div class="benefit-icon">⏱️</div>
+                    <h3 class="benefit-title">Fast, Easy Process</h3>
+                    <p>Our streamlined application process makes it simple to compare options and select the perfect coverage in minutes.</p>
+                </div>
+            </div>
+            
+            <div class="announcement" style="background-color: #e8f0fe;">
+                <h2 class="announcement-title">Are You Overpaying For Auto Insurance?</h2>
+                <p class="announcement-text">Studies show that 7 out of 10 drivers are paying too much for their current coverage. Our quick comparison tool helps identify if you could be saving hundreds each year.</p>
+                <a href="https://ica.compare.com/compare-lp-3/" class="cta-button">Check Your Savings</a>
+            </div>
+        </section>
+    </div>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Clients Say</h2>
+            
+            <div class="testimonial">
+                <p class="testimonial-text">After 12 years with the same insurance company, I decided to see what PremiumSaver could offer. I was skeptical at first, but ended up saving over $760 annually while actually improving my coverage limits. The process was straightforward and professional.</p>
+                <p class="testimonial-author">— Robert M., Atlanta, GA</p>
+            </div>
+            
+            <div class="testimonial">
+                <p class="testimonial-text">As a new homeowner, I was looking for bundled insurance options. PremiumSaver helped me find a comprehensive policy that covered both my home and vehicles at a rate much lower than I expected. Their attention to detail and personalized service made all the difference.</p>
+                <p class="testimonial-author">— Jennifer L., Dallas, TX</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            
+            <div class="benefits">
+                <div class="benefit">
+                    <div class="benefit-icon">1</div>
+                    <h3 class="benefit-title">Share Your Information</h3>
+                    <p>Fill out our simple form with your basic information and current coverage details.</p>
+                </div>
+                
+                <div class="benefit">
+                    <div class="benefit-icon">2</div>
+                    <h3 class="benefit-title">Review Your Options</h3>
+                    <p>We'll present you with personalized quotes from multiple top-rated insurance carriers.</p>
+                </div>
+                
+                <div class="benefit">
+                    <div class="benefit-icon">3</div>
+                    <h3 class="benefit-title">Secure Your Savings</h3>
+                    <p>Select the policy that best meets your needs and budget, then activate your new coverage instantly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">Ready to Stop Overpaying?</h2>
+            <p class="cta-text">Take two minutes to see how much you could save with PremiumSaver. There's no obligation, and you might be surprised by how affordable quality coverage can be.</p>
+            <a href="https://ica.compare.com/compare-lp-3/" class="cta-button" style="background-color: #fff; color: #5e35b1;">Get Your Free Quote</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>About PremiumSaver</h3>
+                    <p>We're dedicated to helping Americans find affordable insurance coverage without sacrificing quality or service. Our network of trusted carriers ensures you get the best possible rates.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://ica.compare.com/compare-lp-3/">Auto Insurance</a></li>
+                        <li><a href="https://ica.compare.com/compare-lp-3/">Home Insurance</a></li>
+                        <li><a href="https://ica.compare.com/compare-lp-3/">Bundle & Save</a></li>
+                        <li><a href="https://ica.compare.com/compare-lp-3/">Coverage Options</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://ica.compare.com/compare-lp-3/">Insurance Guide</a></li>
+                        <li><a href="https://ica.compare.com/compare-lp-3/">FAQs</a></li>
+                        <li><a href="https://ica.compare.com/compare-lp-3/">Blog</a></li>
+                        <li><a href="https://ica.compare.com/compare-lp-3/">Customer Support</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="/shared_resources/privacy_policy.html">Privacy Policy</a></li>
+                        <li><a href="/shared_resources/terms_of_use.html">Terms of Use</a></li>
+                        <li><a href="https://ica.compare.com/compare-lp-3/">Disclaimers</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2024 PremiumSaver. All rights reserved. PremiumSaver is not an insurance company, but connects consumers with trusted insurance providers. This website is an advertisement.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Ensure all links point to the specified URL except privacy policy and terms
+        document.addEventListener('DOMContentLoaded', function() {
+            document.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    // Allow privacy policy and terms of use to navigate normally
+                    if (e.target.href.includes('privacy_policy.html') || e.target.href.includes('terms_of_use.html')) {
+                        return;
+                    }
+                    
+                    // All other links redirect to the conversion URL
+                    e.preventDefault();
+                    window.location.href = 'https://ica.compare.com/compare-lp-3/';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

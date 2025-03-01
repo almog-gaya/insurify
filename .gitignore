@@ -1,0 +1,21 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Backup files
+*.bak
+backup/
+
+# Temporary files
+test_index.html
+*~
+*.swp
+*.swo
+
+# Logs
+*.log

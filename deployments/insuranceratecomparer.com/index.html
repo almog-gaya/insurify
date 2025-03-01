@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare Cars in Your City | RateComparer</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1e5799 0%, #3498db 51%, #207cca 100%);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .headline {
+            font-size: 2.2rem;
+            margin: 20px 0;
+            color: #1e5799;
+            text-align: center;
+            line-height: 1.3;
+        }
+        
+        .city-headline {
+            font-size: 2rem;
+            margin: 30px 0;
+            color: #f39c12;
+            text-align: center;
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .main-content {
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            margin: 30px 0;
+        }
+        
+        .savings-image {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 30px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .alert-text {
+            font-size: 1.4rem;
+            color: #f39c12;
+            font-weight: bold;
+            margin: 30px 0;
+            padding: 20px;
+            border: 2px dashed #f39c12;
+            background-color: #fff9f9;
+            text-align: center;
+            border-radius: 8px;
+        }
+        
+        .cta-button {
+            display: block;
+            background: linear-gradient(to right, #1e5799, #3498db);
+            color: white;
+            text-align: center;
+            padding: 20px 30px;
+            font-size: 1.4rem;
+            border-radius: 50px;
+            margin: 40px auto;
+            text-decoration: none;
+            max-width: 500px;
+            font-weight: bold;
+            box-shadow: 0 8px 15px rgba(52, 152, 219, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 20px rgba(52, 152, 219, 0.4);
+        }
+        
+        .reasons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .reason {
+            background-color: #f8f8f8;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .reason:hover {
+            transform: translateY(-5px);
+        }
+        
+        .reason h3 {
+            color: #1e5799;
+            margin-top: 0;
+            font-size: 1.3rem;
+            border-bottom: 2px solid #1e5799;
+            padding-bottom: 10px;
+        }
+        
+        .steps {
+            margin: 50px 0;
+            counter-reset: step-counter;
+        }
+        
+        .step {
+            position: relative;
+            background-color: #f0f7ff;
+            padding: 25px 25px 25px 80px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .step:before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            position: absolute;
+            left: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #1e5799;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .step h3 {
+            color: #1e5799;
+            margin-top: 0;
+        }
+        
+        .testimonials {
+            margin: 50px 0;
+        }
+        
+        .testimonial {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .testimonial:before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            font-size: 5rem;
+            color: #f0f0f0;
+            z-index: 0;
+            line-height: 1;
+        }
+        
+        .testimonial-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: #1e5799;
+        }
+        
+        .footer {
+            background-color: #1e5799;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 50px;
+        }
+        
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .disclaimer {
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: 30px;
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .city-highlight {
+            color: #f39c12;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">RateComparer</div>
+            <p>The Smart Way to Compare Auto Insurance Rates</p>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div id="city-headline" class="city-headline">
+            Drivers Get FULL Coverage at Wholesale Rates Through The Compliant Drivers Program in <span id="user-city" class="city-highlight">Your City</span>
+        </div>
+        
+        <div class="main-content">
+            <h1 class="headline">Americans Are Shocked: New Rule Makes Auto Insurance Way Cheaper</h1>
+            
+            <img src="https://via.placeholder.com/900x500.png?text=Massive+Insurance+Savings" alt="Insurance Savings" class="savings-image">
+            
+            <p class="alert-text">⚠️ IMPORTANT: Don't Renew Your Auto Insurance Policy Until You Read This ⚠️</p>
+            
+            <p>Did you know that insurance companies have been charging you based on outdated information? Recent studies show that as many as 87% of drivers are overpaying for their auto insurance - often by hundreds or even thousands of dollars per year.</p>
+            
+            <p>Thanks to a little-known insurance regulation change, drivers across America now have access to wholesale rates that were previously unavailable to the general public.</p>
+            
+            <a href="https://ica.compare.com/compare-lp-3/" class="cta-button">CHECK IF YOU QUALIFY FOR SAVINGS</a>
+            
+            <h2>Why Most Drivers Are Overpaying</h2>
+            
+            <div class="reasons">
+                <div class="reason">
+                    <h3>Insurance Companies Don't Want You to Know</h3>
+                    <p>Many insurance companies deliberately make it difficult to compare rates, hoping you'll simply renew your existing policy without shopping around.</p>
+                </div>
+                
+                <div class="reason">
+                    <h3>Your Loyalty Is Being Punished</h3>
+                    <p>Studies show that customers who stay with the same insurance company for more than 3 years are likely paying at least 19% more than new customers.</p>
+                </div>
+                
+                <div class="reason">
+                    <h3>Your Data Is Outdated</h3>
+                    <p>Insurance companies use your past data to set current rates, but they rarely adjust them downward even if your circumstances improve.</p>
+                </div>
+            </div>
+        
+            <h2>How To Check If You Qualify For The Compliant Drivers Program</h2>
+            
+            <div class="steps">
+                <div class="step">
+                    <h3>Enter Your Zip Code</h3>
+                    <p>Take just 30 seconds to see if you qualify for significantly reduced rates through our special program.</p>
+                </div>
+                
+                <div class="step">
+                    <h3>Answer A Few Simple Questions</h3>
+                    <p>Our system will analyze your profile to find the best matching providers offering wholesale rates.</p>
+                </div>
+                
+                <div class="step">
+                    <h3>Compare Your Options</h3>
+                    <p>Review side-by-side quotes from top providers and see how much you could save instantly.</p>
+                </div>
+            </div>
+            
+            <a href="https://ica.compare.com/compare-lp-3/" class="cta-button">SEE YOUR NEW RATE NOW</a>
+            
+            <div class="testimonials">
+                <h2>What Drivers Are Saying</h2>
+                
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"I was paying $210/month with my old insurance. After using this comparison tool, I found the exact same coverage for just $89/month. I'm saving over $1,400 a year!"</p>
+                        <p class="testimonial-author">- Michael T., verified customer</p>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"I couldn't believe how easy it was. It took me less than 5 minutes to compare rates, and I ended up saving $723 annually on my premium. Wish I had known about this years ago."</p>
+                        <p class="testimonial-author">- Sarah J., verified customer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="disclaimer">
+            <p>© 2024 RateComparer | <a href="/shared_resources/privacy_policy.html">Privacy Policy</a> | <a href="/shared_resources/terms_of_use.html">Terms of Service</a> | <a href="https://ica.compare.com/compare-lp-3/">Contact Us</a></p>
+            <p>This website is for informational purposes only and is not affiliated with any insurance company. Insurance coverage cannot be guaranteed as it is dependent on individual circumstances.</p>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <div class="container">
+            <p>RateComparer helps consumers compare insurance options to find the best coverage at the lowest rates.</p>
+            <p><a href="https://ica.compare.com/compare-lp-3/">About Us</a> | <a href="https://ica.compare.com/compare-lp-3/">How It Works</a> | <a href="https://ica.compare.com/compare-lp-3/">FAQ</a></p>
+        </div>
+    </div>
+    
+    <script>
+        // Use IP-based geolocation to get the user's city
+        document.addEventListener('DOMContentLoaded', function() {
+            // IP-based geolocation to get user's city
+            fetch('https://ipapi.co/json/')
+                .then(response => response.json())
+                .then(data => {
+                    let city = data.city || "Your Area";
+                    // Update all city references
+                    updateCityReferences(city);
+                    // Update page title
+                    document.title = "Compare Cars in " + city + " | RateComparer";
+                })
+                .catch(error => {
+                    console.error("Error getting location:", error);
+                    // Fallback to generic title
+                    updateCityReferences("Your Area");
+                });
+            
+            function updateCityReferences(city) {
+                // Update the main city reference
+                if (document.getElementById('user-city')) {
+                    document.getElementById('user-city').textContent = city;
+                }
+                
+                // Update any other city references in content
+                var titleElements = document.querySelectorAll('h1, h2, h3');
+                for (var i = 0; i < titleElements.length; i++) {
+                    if (titleElements[i].textContent.includes('Your City') || 
+                        titleElements[i].textContent.includes('Your Area')) {
+                        titleElements[i].textContent = titleElements[i].textContent
+                            .replace('Your City', city)
+                            .replace('Your Area', city);
+                    }
+                }
+            }
+            
+            // Make sure ALL links redirect to the target URL except for privacy and terms
+            var links = document.getElementsByTagName('a');
+            for (var i = 0; i < links.length; i++) {
+                links[i].addEventListener('click', function(e) {
+                    // Allow privacy policy and terms of use to navigate normally
+                    if (this.href.includes('privacy_policy.html') || this.href.includes('terms_of_use.html')) {
+                        return;
+                    }
+                    e.preventDefault();
+                    window.location.href = 'https://ica.compare.com/compare-lp-3/';
+                });
+            }
+            
+            // Catch all button clicks too
+            document.addEventListener('click', function(e) {
+                var el = e.target;
+                while (el && el !== document.body) {
+                    if (
+                        el.tagName === 'BUTTON' || 
+                        (el.tagName === 'INPUT' && el.type === 'submit') ||
+                        el.getAttribute('role') === 'button' ||
+                        el.classList.contains('btn') ||
+                        el.classList.contains('button') ||
+                        el.classList.contains('cta')
+                    ) {
+                        e.preventDefault();
+                        window.location.href = 'https://ica.compare.com/compare-lp-3/';
+                        return;
+                    }
+                    el = el.parentElement;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
