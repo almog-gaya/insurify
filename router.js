@@ -12,14 +12,22 @@ async function handleRequest(request) {
 
   // Map domains to their corresponding HTML files
   const domainMap = {
-    'bestratefinderpro.com': 'insurify1.html',
-    'budgetinsurancefinder.com': 'insurify2.html',
-    'discountoncarinsurance.com': 'insurify3.html',
-    'insuranceratecomparer.com': 'insurify4.html',
-    'insuranceratedropper.com': 'insurify5.html',
-    'insurancerategenius.com': 'insurify6.html',
-    'quickinsurancematch.com': 'insurify7.html',
-    'saveonpremiumsnow.com': 'insurify8.html',
+    'bestinsuranceratepro.com': 'insurify1.html',
+    'bestinsuranceratesnow.com': 'insurify2.html',
+    'bestratefinderpro.com': 'insurify3.html',
+    'budgetinsurancefinder.com': 'insurify4.html',
+    'budgetinsurancepro.com': 'insurify5.html',
+    'compareinsuranceratesnow.com': 'insurify6.html',
+    'discountoncarinsurance.com': 'insurify7.html',
+    'insuranceratecomparer.com': 'insurify8.html',
+    'insuranceratedrop.com': 'insurify9.html',
+    'insuranceratedropper.com': 'insurify10.html',
+    'insurancerateexpert.com': 'insurify11.html',
+    'insurancerategenius.com': 'insurify12.html',
+    'quickinsurancefinder.com': 'insurify13.html',
+    'quickinsurancematch.com': 'insurify14.html',
+    'saveoninsurancenow.com': 'insurify15.html',
+    'saveonpremiumsnow.com': 'insurify16.html',
   }
 
   // Check if the hostname is in our map
