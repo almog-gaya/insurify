@@ -1,0 +1,82 @@
+<!doctype html><html id="cvt-1568371626-html-root" class="no-js"><head><title>Get A Lower Rate</title><link rel="canonical" href="39-per-month-insurance.html"><link href="https://cdn.convertri.com/font-awesome/font-awesome.woff2?v=4.7.0" as="font" type="font/woff2" crossorigin="anonymous"><meta id="viewport-meta" name="viewport" content="width=device-width"><meta name="application-name" content="Get A Lower Rate"/><meta name="title" content="Get A Lower Rate"><meta property="og:type" content="article"><meta property="og:url" content="https://lifesdailydeals.info/39-per-month-insurance"><meta property="og:title" content="Get A Lower Rate"><meta property="og:description" content="">
+<script>
+// Function to get URL parameters and append them to destination URLs
+function getUrlParams() {
+    const urlSearchParams = new URLSearchParams(window.location.search);
+    const pathSegments = window.location.pathname.split('/').filter(segment => segment.length > 0);
+    
+    // Get query parameters
+    const params = Object.fromEntries(urlSearchParams.entries());
+    
+    // Get path segments that might be arguments (after the main path)
+    const basePathSegments = ['brainye_9', '39-per-month-insurance.html']; // Base path segments to exclude
+    const pathArgs = pathSegments.filter(segment => !basePathSegments.includes(segment));
+    
+    return { queryParams: params, pathArgs: pathArgs };
+}
+
+// Function to build destination URL with all arguments
+function buildDestinationUrl(baseUrl) {
+    const { queryParams, pathArgs } = getUrlParams();
+    let destinationUrl = baseUrl;
+    
+    // Add path arguments if any
+    if (pathArgs.length > 0) {
+        // Remove trailing slash if present
+        if (destinationUrl.endsWith('/')) {
+            destinationUrl = destinationUrl.slice(0, -1);
+        }
+        
+        // Add path arguments
+        pathArgs.forEach(arg => {
+            destinationUrl += '/' + arg;
+        });
+        
+        // Ensure trailing slash
+        if (!destinationUrl.endsWith('/')) {
+            destinationUrl += '/';
+        }
+    }
+    
+    // Add query parameters if any
+    const searchParams = new URLSearchParams();
+    for (const [key, value] of Object.entries(queryParams)) {
+        searchParams.append(key, value);
+    }
+    
+    const queryString = searchParams.toString();
+    if (queryString) {
+        destinationUrl += '?' + queryString;
+    }
+    
+    return destinationUrl;
+}
+
+// Redirect to the new URL when the page loads
+window.addEventListener('DOMContentLoaded', function() {
+    const destinationUrl = buildDestinationUrl('https://ica.compare.com/compare-lp-3/');
+    window.location.href = destinationUrl;
+});
+</script>
+</head>
+<body>
+<div class="main-content">
+  <h1>Get A Lower Rate</h1>
+  <p>Find affordable insurance options starting at $39 per month.</p>
+  <p>You are being redirected to our partner site. If you are not redirected automatically, <a href="https://ica.compare.com/compare-lp-3/" class="redirect-link">click here</a>.</p>
+  <script>
+  // Add click event listener to the redirect link
+  document.addEventListener('DOMContentLoaded', function() {
+    const redirectLink = document.querySelector('.redirect-link');
+    if (redirectLink) {
+      redirectLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        const destinationUrl = buildDestinationUrl('https://ica.compare.com/compare-lp-3/');
+        window.location.href = destinationUrl;
+      });
+    }
+  });
+  </script>
+</div>
+</body>
+</html> 

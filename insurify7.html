@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Car Compare</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 20px;
+			background: #f0f2f5;
+			text-align: center;
+		}
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			background: white;
+			padding: 20px;
+			border-radius: 8px;
+			box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+		}
+		h1 {
+			color: #1a73e8;
+		}
+		.cta-button {
+			display: inline-block;
+			background-color: #1a73e8;
+			color: white;
+			padding: 12px 24px;
+			text-decoration: none;
+			border-radius: 4px;
+			font-weight: bold;
+			margin-top: 20px;
+			transition: background-color 0.3s;
+		}
+		.cta-button:hover {
+			background-color: #0d62c7;
+		}
+	</style>
+	<script>
+	// Function to get URL parameters and append them to destination URLs
+	function getUrlParams() {
+		const urlSearchParams = new URLSearchParams(window.location.search);
+		const pathSegments = window.location.pathname.split('/').filter(segment => segment.length > 0);
+		
+		// Get query parameters
+		const params = Object.fromEntries(urlSearchParams.entries());
+		
+		// Get path segments that might be arguments (after the main path)
+		const basePathSegments = ['brainye_3', 'index.html']; // Base path segments to exclude
+		const pathArgs = pathSegments.filter(segment => !basePathSegments.includes(segment));
+		
+		return { queryParams: params, pathArgs: pathArgs };
+	}
+	
+	// Function to build destination URL with all arguments
+	function buildDestinationUrl(baseUrl) {
+		const { queryParams, pathArgs } = getUrlParams();
+		let destinationUrl = baseUrl;
+		
+		// Add path arguments if any
+		if (pathArgs.length > 0) {
+			// Remove trailing slash if present
+			if (destinationUrl.endsWith('/')) {
+				destinationUrl = destinationUrl.slice(0, -1);
+			}
+			
+			// Add path arguments
+			pathArgs.forEach(arg => {
+				destinationUrl += '/' + arg;
+			});
+			
+			// Ensure trailing slash
+			if (!destinationUrl.endsWith('/')) {
+				destinationUrl += '/';
+			}
+		}
+		
+		// Add query parameters if any
+		const searchParams = new URLSearchParams();
+		for (const [key, value] of Object.entries(queryParams)) {
+			searchParams.append(key, value);
+		}
+		
+		const queryString = searchParams.toString();
+		if (queryString) {
+			destinationUrl += '?' + queryString;
+		}
+		
+		return destinationUrl;
+	}
+	
+	// Function to handle link clicks
+	function handleLinkClick(event) {
+		event.preventDefault();
+		const destinationUrl = buildDestinationUrl('https://ica.compare.com/compare-lp-3/');
+		window.location.href = destinationUrl;
+	}
+	
+	// Add event listener to all links when the DOM is loaded
+	document.addEventListener('DOMContentLoaded', function() {
+		const links = document.querySelectorAll('.cta-button');
+		links.forEach(link => {
+			link.addEventListener('click', handleLinkClick);
+		});
+	});
+	</script>
+</head>
+<body>
+	<div class="container">
+		<h1>Welcome to Brainye 3</h1>
+		<p>This is the content for brainye3.discountoncarinsurance.com</p>
+		<a href="https://ica.compare.com/compare-lp-3/" class="cta-button">Get a Quote</a>
+	</div>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="csrf-token" content="MLLShpddD8jlPAX63gp6mNE01cHKgbWc9gGbQFTi">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+				<title>New To Money</title>
+	
+	
+	<!-- DNS Preloading -->
+	<link rel="preconnect" href="https://d20lqa5s3fnroc.cloudfront.net/d6fcaae4-5113-4584-aba0-b9df88ad7fb6/" crossorigin>
+
+	<!-- Fonts -->
+	
+	<!-- Styles -->
+			<link href="https://d20lqa5s3fnroc.cloudfront.net/d6fcaae4-5113-4584-aba0-b9df88ad7fb6/css/app.css" rel="stylesheet" type="text/css">
+	
+	
+	<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+	<meta property="og:title" content="LP2"/>
+<meta property="og:url" content="https://insuranceratealert.com/"/>
+	<link rel="preconnect" href="https://www.googletagmanager.com/" crossorigin>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-K2SNSVRD8P"></script>
+	<script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-K2SNSVRD8P');
+	</script>
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NC8HD8WR"
+	                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+		<script>
+  !function(f, b, e, v, n, t, s) {
+    if (f.fbq) return
+    n = f.fbq = function() {
+      n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+    }
+    if (!f._fbq) f._fbq = n
+    n.push = n
+    n.loaded = !0
+    n.version = '2.0'
+    n.queue = []
+    t = b.createElement(e)
+    t.async = !0
+    t.src = v
+    s = b.getElementsByTagName(e)[0]
+    s.parentNode.insertBefore(t, s)
+  }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js')
+  fbq('init', '401969756168554')
+  fbq('track', 'PageView')
+</script>
+<noscript><img height="1" width="1" style="display:none"
+               src="https://www.facebook.com/tr?id=401969756168554&ev=PageView&noscript=1"/></noscript>
+	<script>
+      !function (w, d, t) {
+        w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src=i+"?sdkid="+e+"&lib="+t;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};
+        ttq.load('CP5GH4RC77U6AE4R5CV0');
+        ttq.page();
+      }(window, document, 'ttq');
+	</script>
+	
+	<script>
+	// Function to get URL parameters and append them to destination URLs
+	function getUrlParams() {
+		const urlSearchParams = new URLSearchParams(window.location.search);
+		const pathSegments = window.location.pathname.split('/').filter(segment => segment.length > 0);
+		
+		// Get query parameters
+		const params = Object.fromEntries(urlSearchParams.entries());
+		
+		// Get path segments that might be arguments (after the main path)
+		const basePathSegments = ['brainye_2', 'index.html']; // Base path segments to exclude
+		const pathArgs = pathSegments.filter(segment => !basePathSegments.includes(segment));
+		
+		return { queryParams: params, pathArgs: pathArgs };
+	}
+	
+	// Function to build destination URL with all arguments
+	function buildDestinationUrl(baseUrl) {
+		const { queryParams, pathArgs } = getUrlParams();
+		let destinationUrl = baseUrl;
+		
+		// Add path arguments if any
+		if (pathArgs.length > 0) {
+			// Remove trailing slash if present
+			if (destinationUrl.endsWith('/')) {
+				destinationUrl = destinationUrl.slice(0, -1);
+			}
+			
+			// Add path arguments
+			pathArgs.forEach(arg => {
+				destinationUrl += '/' + arg;
+			});
+			
+			// Ensure trailing slash
+			if (!destinationUrl.endsWith('/')) {
+				destinationUrl += '/';
+			}
+		}
+		
+		// Add query parameters if any
+		const searchParams = new URLSearchParams();
+		for (const [key, value] of Object.entries(queryParams)) {
+			searchParams.append(key, value);
+		}
+		
+		const queryString = searchParams.toString();
+		if (queryString) {
+			destinationUrl += '?' + queryString;
+		}
+		
+		return destinationUrl;
+	}
+	
+	// Function to handle link clicks
+	function handleLinkClick(event) {
+		event.preventDefault();
+		const destinationUrl = buildDestinationUrl('https://ica.compare.com/compare-lp-3/');
+		window.location.href = destinationUrl;
+	}
+	
+	// Add event listener to all links when the DOM is loaded
+	document.addEventListener('DOMContentLoaded', function() {
+		const links = document.querySelectorAll('.offer-link');
+		links.forEach(link => {
+			link.addEventListener('click', handleLinkClick);
+		});
+	});
+	</script>
+		</head>
+<body class="antialiased font-sans">
+<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-NC8HD8WR');</script>
+	<!-- End Google Tag Manager -->
+	<div class="w-full h-screen min-h-screen font-sans bg-white text-black text-center">
+
+		<header class="bg-gray-100 py-1 px-3 lg:p-5">
+			<div class="w-full lg:w-6/12 mx-auto">
+				<h1 class="mx-auto text-3xl md:text-4xl lg:text-5xl lg:leading-normal">My Insurance Went From <strong>$179 to $39</strong> Thanks To This Website! </h1>
+				<a id="link6" href="https://ica.compare.com/compare-lp-3/" class="offer-link">
+					<img src="https://d20lqa5s3fnroc.cloudfront.net/d6fcaae4-5113-4584-aba0-b9df88ad7fb6/img/negotiate-insurance/header.jpg" alt="header" class="mx-auto w-full lg:w-8/12 my-2 lg:my-5"/>
+				</a>
+			</div>
+		</header>
+
+		<main class="p-2 lg:p-5">
+			<div class="w-full lg:w-8/12 mx-auto">
+				<h2 class="text-2xl md:text-3xl lg:text-5xl my-1 lg:my-5">See How Much You Can Save!</h2>
+				<h3 class="text-2xl md:text-3xl lg:text-5xl font-bold my-4 md:my-8">What's Your Age Range?</h3>
+				<div class="px-2 md:px-4 lg:my-5 w-full lg:w-6/12 mx-auto grid grid-cols-2 lg:grid-cols-5 gap-5">
+					<a id="link1" href="https://ica.compare.com/compare-lp-3/" class="offer-link py-6 md:py-11 px-2 text-center bg-blue-400 text-white shadow rounded font-bold text-xl border-b-2 border-blue-800 hover:shadow-xl">
+						18 to 34
+					</a>
+					<a id="link2" href="https://ica.compare.com/compare-lp-3/" class="offer-link py-6 md:py-11 px-2 text-center bg-blue-400 text-white shadow rounded font-bold text-xl border-b-2 border-blue-800 hover:shadow-xl">
+						35 to 44
+					</a>
+					<a id="link3" href="https://ica.compare.com/compare-lp-3/" class="offer-link py-6 md:py-11 px-2 text-center bg-blue-400 text-white shadow rounded font-bold text-xl border-b-2 border-blue-800 hover:shadow-xl">
+						45 to 54
+					</a>
+					<a id="link4" href="https://ica.compare.com/compare-lp-3/" class="offer-link py-6 md:py-11 px-2 text-center bg-blue-400 text-white shadow rounded font-bold text-xl border-b-2 border-blue-800 hover:shadow-xl">
+						55 to 64
+					</a>
+					<a id="link5" href="https://ica.compare.com/compare-lp-3/" class="offer-link py-6 md:py-11 px-2 text-center bg-blue-400 text-white shadow rounded font-bold text-xl border-b-2 border-blue-800 hover:shadow-xl">
+						65+
+					</a>
+				</div>
+			</div>
+		</main>
+
+		<footer class="flex flex-col text-xs text-center mt-8">
+
+			<div class="order-last">
+				<p class="w-11/12 lg:w-6/12 mx-auto mb-4 lg:mb-10">This site is not a part of the Facebook website or Facebook Inc. This site is not endorsed by Facebook in
+					any way. FACEBOOK is a trademark of FACEBOOK, Inc.</p>
+
+				<p class="w-11/12 lg:w-5/12 mx-auto text-justify mb-10 lg:mb-0">This page is an advertorial and is not a consumer protection update. The story told here is for
+					demonstration purposes only and results may vary. Our intention is to provide an online resource that is
+					both informative and helpful. We are not affiliated with any news source. The website and the company
+					that owns it is not responsible for any typographical or photographic errors. All trademarks, logos, and
+					service marks displayed are registered or unregistered trademarks of their respective owners.
+					Clarification of headlines referencing "new rules." A "rule" is defined as a "piece of advice about the
+					best way to do something" by Merriam-Webster's Dictionary. Contents of the site are copyrighted and
+					property of the review or this site. Receiving multiple quotes from comparison sites can give you access
+					to the most competitive rates in your local area.</p>
+			</div>
+
+			<div class="order-first lg:order-last mb-10 lg:mb-0">
+				<ul class="flex flex-row justify-center gap-6 mx-auto text-center lg:mt-16">
+					<li><a href="terms.html" class="font-bold underline">Terms of Use</a></li>
+					<li><a href="privacy.html" class="font-bold underline">Privacy Policy</a></li>
+				</ul>
+			</div>
+
+		</footer>
+
+	</div>
+<script src="https://d20lqa5s3fnroc.cloudfront.net/d6fcaae4-5113-4584-aba0-b9df88ad7fb6/js/manifest.js" defer></script>
+<script src="https://d20lqa5s3fnroc.cloudfront.net/d6fcaae4-5113-4584-aba0-b9df88ad7fb6/js/vendor.js" defer></script>
+<script src="https://d20lqa5s3fnroc.cloudfront.net/d6fcaae4-5113-4584-aba0-b9df88ad7fb6/js/app.js" defer></script>
+</body>
+</html>
